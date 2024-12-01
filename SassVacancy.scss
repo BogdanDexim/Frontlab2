@@ -1,0 +1,154 @@
+
+
+$padding: 10px;
+$font-size: 32px;
+$button-padding: 20px;
+$logo-width: 6%;
+$margin-auto: auto;
+$gap: 30px;
+$main-width: 350px;
+$main-height: 60px;
+$vacancy-height: 500px;
+$guide-height: 700px;
+$grid-gap: 30px;
+$number-font-size: 75px;
+@use 'base';
+img {
+  height: 100%;
+  width: auto;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+header, article, footer {
+  margin-left: $margin-auto;
+  margin-right: $margin-auto;
+}
+
+header {
+  display: flex;
+  padding: $padding;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: base.$block-color;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+nav {
+  margin: 10px 0;
+  text-align: center;
+}
+
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  margin: 25px;
+  color: base.$link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  border-top: 1px solid black;
+}
+
+.logo {
+  width: $logo-width;
+  margin-left: 35px;
+  border-radius: base.$border-radius;
+}
+
+.join-us-container {
+  font-size: $font-size;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > section {
+    padding: 20px;
+    max-width: 43%;
+  }
+}
+
+.buttons {
+  width: $main-width;
+  height: $main-height;
+}
+
+.Vacancy-container {
+  height: $vacancy-height;
+  background-image: url("https://www.shutterstock.com/image-vector/car-rental-vector-concept-minimal-600nw-2275966199.jpg");
+  background-size: auto;
+  display: grid;
+  grid-template-areas:
+    '1 2 3'
+    'empt but empt2';
+  grid-template-rows: 1fr 80px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $gap;
+
+  > section {
+    border: 1px solid black;
+  }
+
+  > button {
+    grid-area: but;
+    justify-self: center;
+    align-self: flex-start;
+  }
+
+  .item {
+    background-color: base.$block-color;
+    border: 1px solid black;
+    width: 250px;
+    height: 80%;
+    align-self: center;
+    padding: 10px;
+  }
+}
+
+.Guide-container {
+  height: $guide-height;
+  display: grid;
+  grid-template-areas:
+    'top top top'
+    '1 2 3'
+    '4 5 0'
+    'empt but empt2';
+  grid-template-rows: 0.20fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $grid-gap;
+
+  > b {
+    font-size: 50px;
+    grid-area: top;
+    justify-self: center;
+  }
+
+  > button {
+    grid-area: but;
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+.number {
+  font-size: $number-font-size;
+  margin-right: 14px;
+  float: left;
+}
